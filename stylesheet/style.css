@@ -1,0 +1,134 @@
+@font-face {
+    font-family: "Outfit";
+    src: url("../fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900; 
+    font-style: normal;
+  }
+:root {
+    --Slate-900: #1F314F;
+    --Slate-500: #68778D;
+    --Slate-300: #D5E1EF;
+    --Regular: 400;
+    --Bold: 700;
+}
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: var(--Slate-300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+h1 {
+    font-weight: var(--Bold);
+    font-size:22px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    color: var(--Slate-900);
+}
+
+p {
+    font-weight: var(--Regular);
+    font-size: 15px;
+    line-height: 140%;
+    letter-spacing: 0.2px;
+    color: var(--Slate-500);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    max-width: 320px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 12px 0px 40px 0px;
+}
+.container__item {
+    background-color: #2C7DFA;
+    position: relative;
+    padding: 64px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.container__item img {
+    position: relative;
+    z-index: 1; 
+    display: block;
+  }
+.container__text {
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+    gap: 16px;
+}
+
+.container__item::before {
+    content:"";
+    position:absolute;
+    padding: 164px;
+    background-color: #3685FF;
+    right: 90px;
+    bottom: 120px;
+    border-radius: 100%;
+}
+
+.container__item::after {
+    content:"";
+    position:absolute;
+    padding: 135px;
+    background-color: #3685FF;
+    top: 185px;
+    right: 0px;
+    left: 150px;
+    border-radius: 100%;
+}
+
+/* mobile-first: базовые стили уже сверху */
+
+/* Планшет и выше */
+@media (min-width: 768px) {
+    .container {
+      max-width: 320px;
+      padding: 12px 0 40px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    p {
+      font-size: 16px;
+    }
+  
+    .container__item {
+      padding: 64px;
+    }
+  }
+  
+  /* Очень маленькие экраны */
+  @media (max-width: 375px) {
+    body {
+      padding: 16px;
+      height: auto;
+      min-height: 100vh;
+    }
+  
+    .container {
+      width: 100%;
+      max-width: 320px;
+    }
+  
+    .container__item {
+      padding: 48px;
+    }
+  
+    .container__item img {
+      width: 140px;
+      height: 140px;
+    }
+  }
